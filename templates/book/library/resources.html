@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Ресурсы</title>
+{% endblock title %}
+        {% block content %}
+            <div class="main">
+            		<div class="about">
+                        <ul>
+                            <li><a href="/library_bases">Базы библиотек</a></li>
+                            <li><a href="/digital_library">Электронные библиотеки</a></li>
+                            <li class="menu-children">
+                                <a href="/open_sources">Открытые ресурсы</a>
+                                <ul>
+                                    <li><a href="/open_access_resources">Ресурсы с открытым доступом</a></li>
+                                    <li><a href="/education_open_resources">Ресурсы с открытым доступом для обучения</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        {% endblock content %}

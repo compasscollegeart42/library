@@ -1,0 +1,22 @@
+<footer>
+    <div class="mainFooter">
+        <div class="privHold">
+<script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$(function($){
+	var url = document.location.href;
+	var pos= url.indexOf("#");
+	if (pos > 0) {
+		url = url.substring(0, pos);
+	}
+	$.each($('.js_menu a'), function(index, value) {
+		if (url.indexOf($(this).attr('href')) + 1) {
+			$(this).addClass('active').parent().addClass('active');
+		}
+	});
+});
+</script>
+            <pre> &copy; 2021 | Compass College | All rights reserved</pre>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>{{ Books.title }}</title>
+{% endblock title %}
+        {% block content %}
+    <div class="main">
+        <div class="inner">
+            <br /><b>{{ Books.title }}</b>
+            <br /><img src="{{ Books.image.url }}" width="200px" alt="{{ Books.title }}">
+            <p class="descript">{{ Books.description }}</p>
+            <br /><b>Страниц:</b> {{ Books.num_list }}
+            <br /><b>Писатель:</b>{% for authors in Books.authors.all %}
+            {{ authors.name }}
+        {% endfor %}
+            <br /><b>Переводчик:</b>{% for translater in Books.translater.all %}
+            {{ translater.name }}
+        {% endfor %}
+            <br /><b>Издатель:</b>{% for public in Books.public.all %}
+            {{ public.title }}
+        {% endfor %}
+            <br /><b>Год публикации:</b>{{ Books.year_public }}
+            <br /><a href="{{ Books.files.url }}">Открыть</a> | <a href="{{ Books.files.url }}" download>Скачать</a>
+            <br />
+        </div>
+    </div>
+{% endblock content %}

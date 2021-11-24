@@ -1,0 +1,10 @@
+{% load static %}
+<header>
+    <a href="/"><img src="{% static 'img/logo.png' %}" class="logo" alt="Compass college's Library" />
+        <label class="logo">Библиотека</label></a>
+    <form action="{% url 'search' %}" method="get" class="search">
+        <input type="search" placeholder="search..." name="q"/>
+    </form>
+{% include 'include/menu.html' %}
+
+</header>

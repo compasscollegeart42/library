@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+    {% block title %}
+    <title>Compass College</title>
+    {% endblock title %}
+        {% block content %}
+            <div class="main">
+            		<div class="inner">
+                        {% for books in book_list %}
+                    	<div class="col-1">
+                            <h2><a href="/{{ books.url }}/">{{ books.title }}</a></h2>
+                        	<img src="{{ books.image.url }}" />
+                            <p>{{ books.description }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+            </div>
+        {% endblock content %}
