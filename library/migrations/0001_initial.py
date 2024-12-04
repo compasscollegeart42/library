@@ -9,10 +9,12 @@ class Migration(migrations.Migration):
 
     initial = True
 
- dependencies = [
+
+    dependencies = [
     ]
 
     operations = [
+        # Создание модели Department
         migrations.CreateModel(
             name='Department',
             fields=[
@@ -25,7 +27,17 @@ class Migration(migrations.Migration):
                 'verbose_name_plural': 'Департаменты',
             },
         ),
-        # Остальные модели, такие как authors, genre, public и т.д.
+        
+        # Обновление модели Book с добавлением связи с Department через ManyToManyField
+        migrations.AddField(
+            model_name='books',
+            name='departments',
+            field=models.ManyToManyField(
+                related_name='books', 
+                to='library.Department', 
+                verbose_name='Департамент'
+            ),
+        ),
     ]
     
     dependencies = [
