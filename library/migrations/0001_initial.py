@@ -9,6 +9,25 @@ class Migration(migrations.Migration):
 
     initial = True
 
+ dependencies = [
+    ]
+
+    operations = [
+        migrations.CreateModel(
+            name='Department',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('name', models.CharField(max_length=100, verbose_name='Название департамента')),
+                ('description', models.TextField(help_text='Описание департамента', verbose_name='Описание')),
+            ],
+            options={
+                'verbose_name': 'Департамент',
+                'verbose_name_plural': 'Департаменты',
+            },
+        ),
+        # Остальные модели, такие как authors, genre, public и т.д.
+    ]
+    
     dependencies = [
     ]
 
